@@ -7,22 +7,24 @@ var webTitle = '企业环保信息公示平台';
 var phoneNum = '130-3299-0177';
 var BS = [
     {
-        bsId: 1, 
-        show: true,
+        bsId: 1,
+        isBsShow: true,
+        isSpecialShow: true,
+        bsName: '山西阳泉市大阳泉煤炭有限责任公司',
+        publicDate: '2021年5月21日', 
         showDeadline: '2021-07-30',
-        bsName: '榆林双威环保建材有限公司',
-        publicDate: '2021 年 05 月 22 日', 
-        dropdownName: '榆林双威环保建材公司', 
-        download: '榆林双威环保建材有限公司.zip' 
+        dropdownName: '阳泉市大阳泉煤炭有限公司', 
+        download: '固废污染环境-防治信息公示大阳泉.xlsx' 
     },
-    { 
+    {
         bsId: 2, 
-        show: true,
+        isBsShow: true,
+        isSpecialShow: true,
+        bsName: '汉中达鑫再生资源回收有限责任公司', 
+        publicDate: '2021年6月23日', 
         showDeadline: '2021-08-14',
-        bsName: '延安恒利达洗选煤有限责任公司', 
-        publicDate: '2021 年 06月 14 日', 
-        dropdownName: '恒利达洗选煤有限责任公司', 
-        download: '延安恒利达洗选煤有限责任公司.zip'
+        dropdownName: '汉中达鑫再生资源回收公司', 
+        download: '汉中达鑫再生资源回收有限责任公司公示.pdf'
      }
 
 ]; 
@@ -32,6 +34,7 @@ var BS = [
     setHeader();
     setFooter();
     getToday();
+    specialBsShow();  //index show
 
     setDropdownContent();
     dropdown();
@@ -42,7 +45,7 @@ var BS = [
 
 function setHeader() {
   $("#site_title").empty();
-  $("#site_title").html('<h1 class="h1Defined"><a href="'+ webSite +'" target="_parent">'+ webTitle +'<span>&nbsp;缔造健康的生活，维护和谐的自然环境</span></a></h1>');
+  $("#site_title").html('<h1 class="h1Defined"><a href="'+ webSite +'" target="_parent">'+ webTitle +'<span>遵守国家环保要求，依法公开环境防治信息，主动接受社会监督</span></a></h1>');
 }
 
 /* 
@@ -70,6 +73,20 @@ function getToday() {
     $("#thisYear").html(today.getFullYear());
 }
 
+function specialBsShow () {
+    $('#specialBsShow').empty();
+    var specialBsCon = '';
+    for (var i = 0; i < BS.length; i++) {
+        var item = BS[i];
+        // isSpecialShow
+        if (item.isSpecialShow) {
+            var itemLi = '<div class="recent_post"><h4><a href="html/tab4.html">'+ item.bsName +'</a></h4>发布日期：'+ item.publicDate +'</div>';
+            specialBsCon += itemLi;
+        }
+    }
+    $('#specialBsShow').html(specialBsCon);
+}
+
 function setDropdownContent () {
     $('#dropdownMenu').empty();
     var dropdownCon = '';
@@ -86,7 +103,7 @@ function setBsContent () {
     var BsCon = "";
     for (var i = 0; i < BS.length; i++) {
         var bsItem = BS[i];
-        BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span>企业名称：'+ bsItem.bsName +'</span> <span>公示日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong> 目前正在进行项目环境检测报告验收，验收监测工作当地环保局承担。现进行项目验收监测报告信息公示。</p><p><a style="margin-right:10px;margin-left:400px;" href="../database/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
+        BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span>企业名称：'+ bsItem.bsName +'</span> <span>发布日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong> 正在进行固体废物污染环境防治信息公示。公示详细信息见附件，我公司承诺以上公示信息真实有效并承担相关法律责任。</p><p><a style="margin-right:10px;margin-left:400px;" href="../database/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
     }
     $("#BS_List").html(BsCon);
 }

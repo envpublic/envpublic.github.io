@@ -152,12 +152,12 @@ h4 {
 }
 
 #nav_menu {
-	width: 1300px;
+	width: 800px;
 	height: 60px;
 	margin: 0 auto;
 	padding: 0 50px;
 	background: url(../images/templatemo_menu_bar_bg.jpg) center no-repeat;
-	background-size: 1200px 60px;
+	/* background-size: 900px 60px; */
 }
 
 #nav_menu ul {
@@ -548,6 +548,7 @@ h4 {
 	font-size: 15px;
 	line-height: 38px;
     font-family:'microsoft Yahei';
+	padding-bottom: 40px;
 }
 /*tab6*/
 .t6-content{
