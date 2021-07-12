@@ -4,30 +4,7 @@
 
 var webSite = 'https://envpublic.github.io/';
 var webTitle = '企业环保信息公示平台';
-var phoneNum = '130-3299-0177';
-var BS = [
-    {
-        bsId: 1,
-        isBsShow: true,
-        isSpecialShow: true,
-        bsName: '山西阳泉市大阳泉煤炭有限责任公司',
-        publicDate: '2021年5月21日', 
-        showDeadline: '2021-07-30',
-        dropdownName: '阳泉市大阳泉煤炭有限公司', 
-        download: '固废污染环境-防治信息公示大阳泉.xlsx' 
-    },
-    {
-        bsId: 2, 
-        isBsShow: true,
-        isSpecialShow: true,
-        bsName: '汉中达鑫再生资源回收有限责任公司', 
-        publicDate: '2021年6月23日', 
-        showDeadline: '2021-08-14',
-        dropdownName: '汉中达鑫再生资源回收公司', 
-        download: '汉中达鑫再生资源回收有限责任公司公示.pdf'
-     }
-
-]; 
+var phoneNum = '13032990177（微信同号）';
 
 /* 入口函数 */
 (function () {
@@ -53,7 +30,7 @@ function setHeader() {
  */
 function setFooter() {
     $('#templatemo_footer').empty()
-    $('#templatemo_footer').html('<div class="section_w860"> Copyright © <span id="thisYear"></span> <a href="'+ webSite +'">'+ webTitle +'</a> | 平台公示请联系：<a>'+ phoneNum +'</a></div>')
+    $('#templatemo_footer').html('<div class="section_w860"> Copyright © <span id="thisYear"></span> <a href="'+ webSite +'">'+ webTitle +'</a> | 公示请联系：<a>'+ phoneNum +'</a></div>')
 }
 
 /*获取并显示今日时间*/
@@ -73,13 +50,14 @@ function getToday() {
     $("#thisYear").html(today.getFullYear());
 }
 
+// Set Special Business at index
 function specialBsShow () {
     $('#specialBsShow').empty();
     var specialBsCon = '';
     for (var i = 0; i < BS.length; i++) {
         var item = BS[i];
         // isSpecialShow
-        if (item.isSpecialShow) {
+        if (item.isBsShow && item.isSpecialShow) {
             var itemLi = '<div class="recent_post"><h4><a href="html/tab4.html">'+ item.bsName +'</a></h4>发布日期：'+ item.publicDate +'</div>';
             specialBsCon += itemLi;
         }
@@ -87,23 +65,29 @@ function specialBsShow () {
     $('#specialBsShow').html(specialBsCon);
 }
 
+// Set Dropdown List
 function setDropdownContent () {
     $('#dropdownMenu').empty();
     var dropdownCon = '';
     for (var i = 0; i < BS.length; i++) {
         var item = BS[i];
-        var itemLi = '<li id="dropDown'+ item.bsId +'"><a href="javascript:void(0)">'+ item.dropdownName +'</a></li>';
-        dropdownCon += itemLi;
+        if (item.isBsShow) {
+            var itemLi = '<li id="dropDown'+ item.bsId +'"><a href="javascript:void(0)">'+ item.dropdownName +'</a></li>';
+            dropdownCon += itemLi;
+        }
     }
     $('#dropdownMenu').html(dropdownCon)
 }
 
+// Set Business Content in tab4
 function setBsContent () {
     $("#BS_List").empty();
     var BsCon = "";
     for (var i = 0; i < BS.length; i++) {
         var bsItem = BS[i];
-        BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span>企业名称：'+ bsItem.bsName +'</span> <span>发布日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong> 正在进行固体废物污染环境防治信息公示。公示详细信息见附件，我公司承诺以上公示信息真实有效并承担相关法律责任。</p><p><a style="margin-right:10px;margin-left:400px;" href="../database/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
+        if (bsItem.isBsShow) {
+            BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span>企业名称：'+ bsItem.bsName +'</span> <span>发布日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong> 正在进行固体废物污染环境防治信息公示。公示详细信息见附件，我公司承诺公示信息真实有效，并承担相关法律责任。</p><p><a style="margin-right:10px;margin-left:400px;" href="../bsData/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
+        }
     }
     $("#BS_List").html(BsCon);
 }
@@ -136,13 +120,42 @@ $("#clickHideMenu").on('click',function(){
 //点击不同商户，切换相应的内容
 function changeShanghu(){
     $("#dropDown1").on('click',function(){
-        $("#bsList1").show();
-        $("#bsList1").siblings("div.shanghu").hide();
+        $("#bsList1").show().siblings("div.shanghu").hide();
     });
-   
+
     $("#dropDown2").on('click',function(){
-        $("#bsList2").show();
-        $("#bsList2").siblings("div.shanghu").hide();
+        $("#bsList2").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown3").on('click',function(){
+        $("#bsList3").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown4").on('click',function(){
+        $("#bsList4").show().siblings("div.shanghu").hide();
     });
     
+    $("#dropDown5").on('click',function(){
+        $("#bsList5").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown6").on('click',function(){
+        $("#bsList6").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown7").on('click',function(){
+        $("#bsList7").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown8").on('click',function(){
+        $("#bsList8").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown9").on('click',function(){
+        $("#bsList9").show().siblings("div.shanghu").hide();
+    });
+
+    $("#dropDown10").on('click',function(){
+        $("#bsList10").show().siblings("div.shanghu").hide();
+    });
 }
