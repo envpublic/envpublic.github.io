@@ -48,5 +48,15 @@ var BS = [
       dropdownName: '张明沟矿业有限责任公司', 
       download: '张明沟煤矿固废公开信息.pdf',
       showDeadline: '2021-12-31',
-   }
+    },
+    {
+      bsId: 6,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县新民镇东沟联办煤矿', 
+      publicDate: '2021年7月13日', 
+      dropdownName: '府谷县新民镇东沟联办煤矿', 
+      download: '府谷县新民镇东沟联办煤矿固废公示表.xls',
+      showDeadline: '2021-12-31',
+    }
 ]; 
