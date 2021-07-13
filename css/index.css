@@ -161,7 +161,7 @@ h4 {
 }
 
 #nav_menu ul {
-	width: 750px;
+	width: 100%;
 	padding: 15px 0 0 0;
 	margin: 0px auto;
 	list-style: none;
@@ -170,7 +170,7 @@ h4 {
 #nav_menu ul li {
 	padding: 0px;
 	margin: 0px;
-	display: inline;
+	display: inline-block;
 	position: relative;
 }
 #nav_menu > ul > li > a {
@@ -567,10 +567,11 @@ h4 {
 	border-bottom: 5px solid #2ba0db;
 	display: none;
 	position: absolute;
-	width: 200px;
-	top:28px;
-	left:-160px;
-	float: left;
+	width: 240px;
+	top: 28px;
+	left: -60px;
+	/* left:-160px; */
+	/* float: left; */
 }
 #nav_menu ul li ul li {
 	border-top: 1px solid #444;

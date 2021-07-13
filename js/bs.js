@@ -38,5 +38,15 @@ var BS = [
         dropdownName: '榆林市府谷县天化医院', 
         download: '榆林府谷天化医院.pdf',
         showDeadline: '2021-12-31',
-     }
+     },
+     {
+      bsId: 5,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县张明沟矿业有限责任公司', 
+      publicDate: '2021年7月13日', 
+      dropdownName: '张明沟矿业有限责任公司', 
+      download: '张明沟煤矿固废公开信息.pdf',
+      showDeadline: '2021-12-31',
+   }
 ]; 
