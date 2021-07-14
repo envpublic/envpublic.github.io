@@ -1,7 +1,7 @@
 var BS = [
     {
         bsId: 1,
-        isBsShow: true,
+        isBsShow: false,
         isSpecialShow: false,
         bsName: '山西阳泉市大阳泉煤炭有限责任公司',
         publicDate: '2021年5月21日', 
@@ -12,7 +12,7 @@ var BS = [
     {
         bsId: 2, 
         isBsShow: true,
-        isSpecialShow: true,
+        isSpecialShow: false,
         bsName: '汉中达鑫再生资源回收有限责任公司', 
         publicDate: '2021年6月23日', 
         dropdownName: '汉中达鑫再生资源回收公司', 
@@ -67,6 +67,16 @@ var BS = [
       publicDate: '2021年7月14日', 
       dropdownName: '府谷县东峰煤矿有限公司', 
       download: '府谷县东峰煤矿有限公司2020年一般固体废物与危险废物信息公示.pdf',
+      showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 8,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县中联矿业有限公司', 
+      publicDate: '2021年7月14日', 
+      dropdownName: '府谷县中联矿业有限公司', 
+      download: '中联煤矿固废公开信息.pdf',
       showDeadline: '2021-12-31',
     }
 ]; 
