@@ -158,4 +158,8 @@ function changeShanghu(){
     $("#dropDown10").on('click',function(){
         $("#bsList10").show().siblings("div.shanghu").hide();
     });
+
+    $("#dropDown11").on('click',function(){
+        $("#bsList11").show().siblings("div.shanghu").hide();
+    });
 }

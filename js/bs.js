@@ -22,7 +22,7 @@ var BS = [
      {
         bsId: 3, 
         isBsShow: true,
-        isSpecialShow: true,
+        isSpecialShow: false,
         bsName: '府谷县田家寨镇新田煤矿有限公司', 
         publicDate: '2021年7月12日',
         dropdownName: '田家寨镇新田煤矿有限公司', 
@@ -32,7 +32,7 @@ var BS = [
      {
         bsId: 4,
         isBsShow: true,
-        isSpecialShow: true,
+        isSpecialShow: false,
         bsName: '陕西省榆林市府谷县府谷天化医院', 
         publicDate: '2021年7月12日', 
         dropdownName: '榆林市府谷县天化医院', 
@@ -42,7 +42,7 @@ var BS = [
      {
       bsId: 5,
       isBsShow: true,
-      isSpecialShow: true,
+      isSpecialShow: false,
       bsName: '府谷县张明沟矿业有限责任公司', 
       publicDate: '2021年7月13日', 
       dropdownName: '张明沟矿业有限责任公司', 
@@ -77,6 +77,36 @@ var BS = [
       publicDate: '2021年7月14日', 
       dropdownName: '府谷县中联矿业有限公司', 
       download: '中联煤矿固废公开信息.pdf',
+      showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 9,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县祥荣煤矿有限公司', 
+      publicDate: '2021年7月19日', 
+      dropdownName: '府谷县祥荣煤矿有限公司', 
+      download: '府谷县祥荣煤矿有限公司.pdf',
+      showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 10,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县瑞泰煤矿有限公司', 
+      publicDate: '2021年7月19日', 
+      dropdownName: '府谷县瑞泰煤矿有限公司', 
+      download: '瑞泰固废公开信息.pdf',
+      showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 11,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县工农联营煤矿', 
+      publicDate: '2021年7月19日', 
+      dropdownName: '府谷县工农联营煤矿', 
+      download: '工农煤矿固废公开信息.pdf',
       showDeadline: '2021-12-31',
     }
 ]; 
