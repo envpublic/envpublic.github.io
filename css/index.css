@@ -527,7 +527,7 @@ h4 {
 	text-align: center;
     box-shadow:3px 4px #a0c3ff;
 }
-.t4-content .shanghu>p{
+.t4-content .shanghu > p{
 	text-align: justify;
 }
 .t4-content .title span{
@@ -535,6 +535,13 @@ h4 {
 	padding:5px 15px 5px 15px;
 	font-size: 15px;
 	font-weight: bold;
+}
+.t4-content .shanghu .title{
+	position: relative;
+}
+.t4-content .title .public-date {
+	position: absolute;
+	right: 24px;
 }
 .t4-content .shanghu p a{
 	margin:10px 40px 5px 26rem;

@@ -65,14 +65,14 @@ function specialBsShow () {
     $('#specialBsShow').html(specialBsCon);
 }
 
-// Set Dropdown List
+// Set Dropdown List Content
 function setDropdownContent () {
     $('#dropdownMenu').empty();
     var dropdownCon = '';
     for (var i = 0; i < BS.length; i++) {
         var item = BS[i];
         if (item.isBsShow) {
-            var itemLi = '<li id="dropDown'+ item.bsId +'"><a href="javascript:void(0)">'+ item.dropdownName +'</a></li>';
+            var itemLi = '<li id="dropDown'+ item.bsId +'" class="dropdown-list" data-bsid="'+ item.bsId +'"><a href="javascript:void(0)">'+ item.dropdownName +'</a></li>';
             dropdownCon += itemLi;
         }
     }
@@ -86,7 +86,7 @@ function setBsContent () {
     for (var i = 0; i < BS.length; i++) {
         var bsItem = BS[i];
         if (bsItem.isBsShow) {
-            BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span>企业名称：'+ bsItem.bsName +'</span> <span>发布日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong> 正在进行固体废物污染环境防治信息公示。公示详细信息见附件，我公司承诺公示信息真实有效，并承担相关法律责任。</p><p><a style="margin-right:10px;margin-left:360px;" href="../bsData/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
+            BsCon += '<div id="bsList'+ bsItem.bsId +'" class="shanghu"><p class="title"><span clas="bs-name">企业名称：'+ bsItem.bsName +'</span> <span class="public-date">发布日期：'+ bsItem.publicDate +'</span></p><p style="margin:10px 20px;font-size:14px;color:#555;line-height:28px;"><strong>'+ bsItem.bsName +'</strong>正在进行固体废物污染环境防治信息公示。公示详细信息见附件，我公司承诺公示信息真实有效，并承担相关法律责任。</p><p><a style="margin-right:10px;margin-left:360px;" href="../bsData/'+ bsItem.download +'" target="_blank">点击下载 <span>'+ bsItem.bsName +'</span> 公示文件</a></p></div>';
         }
     }
     $("#BS_List").html(BsCon);
@@ -117,49 +117,19 @@ $("#clickHideMenu").on('click',function(){
 	});
 }
 
-//点击不同商户，切换相应的内容
+//点击不同商户，切换相应的内容，保证 dropdown list 和 bs list 的 bsid 是对应的。
 function changeShanghu(){
-    $("#dropDown1").on('click',function(){
+    $(".dropdown-list").each(function (index, ele) {
+        $(this).on('click', function() {
+           var currentBsId = $(this).attr('data-bsid');
+            if (currentBsId) {
+                $("#bsList"+ currentBsId).show().siblings("div.shanghu").hide();
+            }
+        })
+    })
+
+    /* $("#dropDown1").on('click',function(){
         $("#bsList1").show().siblings("div.shanghu").hide();
     });
-
-    $("#dropDown2").on('click',function(){
-        $("#bsList2").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown3").on('click',function(){
-        $("#bsList3").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown4").on('click',function(){
-        $("#bsList4").show().siblings("div.shanghu").hide();
-    });
-    
-    $("#dropDown5").on('click',function(){
-        $("#bsList5").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown6").on('click',function(){
-        $("#bsList6").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown7").on('click',function(){
-        $("#bsList7").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown8").on('click',function(){
-        $("#bsList8").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown9").on('click',function(){
-        $("#bsList9").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown10").on('click',function(){
-        $("#bsList10").show().siblings("div.shanghu").hide();
-    });
-
-    $("#dropDown11").on('click',function(){
-        $("#bsList11").show().siblings("div.shanghu").hide();
-    });
+    */
 }

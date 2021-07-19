@@ -18,7 +18,7 @@ var BS = [
         dropdownName: '汉中达鑫再生资源回收公司', 
         download: '汉中达鑫再生资源回收有限责任公司公示.pdf',
         showDeadline: '2021-08-14'
-     },
+    },
      {
         bsId: 3, 
         isBsShow: true,
@@ -107,6 +107,16 @@ var BS = [
       publicDate: '2021年7月19日', 
       dropdownName: '府谷县工农联营煤矿', 
       download: '工农煤矿固废公开信息.pdf',
+      showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 12,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷电力医院', 
+      publicDate: '2021年7月19日', 
+      dropdownName: '府谷电力医院', 
+      download: '府谷电力医院.pdf',
       showDeadline: '2021-12-31',
     }
 ]; 
