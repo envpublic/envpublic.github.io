@@ -52,7 +52,7 @@ var BS = [
     {
       bsId: 6,
       isBsShow: true,
-      isSpecialShow: true,
+      isSpecialShow: false,
       bsName: '府谷县新民镇东沟联办煤矿', 
       publicDate: '2021年7月13日', 
       dropdownName: '府谷县新民镇东沟联办煤矿', 
@@ -118,5 +118,16 @@ var BS = [
       dropdownName: '府谷电力医院', 
       download: '府谷电力医院.pdf',
       showDeadline: '2021-12-31',
+    },
+    {
+      bsId: 13,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县中医医院', 
+      publicDate: '2021年7月20日', 
+      dropdownName: '府谷县中医医院', 
+      download: '府谷县中医医院.pdf',
+      showDeadline: '2021-12-31',
     }
+
 ]; 
