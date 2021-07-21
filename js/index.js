@@ -101,20 +101,20 @@ $('#nav_menu>ul>li').hover(
            $('#dropdownMenu').show();
            }
         */
-        $('ul', this).stop().slideDown(200);
+        $('ul', this).stop().slideDown(400);
     },
     function() {
-        $('ul', this).stop().slideUp(300);
+        $('ul', this).stop().slideUp(1080);
     }
 );
 
 //点击标题让下拉菜单缩回   
-$("#clickHideMenu").off('click');    
+/* $("#clickHideMenu").off('click');    
 $("#clickHideMenu").on('click',function(){
 	if($('#dropdownMenu').css('display')==""){
            $('#dropdownMenu').hide();
         }
-	});
+	}); */
 }
 
 //点击不同商户，切换相应的内容，保证 dropdown list 和 bs list 的 bsid 是对应的。
