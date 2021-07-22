@@ -62,7 +62,7 @@ var BS = [
     {
       bsId: 7,
       isBsShow: true,
-      isSpecialShow: true,
+      isSpecialShow: false,
       bsName: '府谷县东峰煤矿有限公司', 
       publicDate: '2021年7月14日', 
       dropdownName: '府谷县东峰煤矿有限公司', 
@@ -72,7 +72,7 @@ var BS = [
     {
       bsId: 8,
       isBsShow: true,
-      isSpecialShow: true,
+      isSpecialShow: false,
       bsName: '府谷县中联矿业有限公司', 
       publicDate: '2021年7月14日', 
       dropdownName: '府谷县中联矿业有限公司', 
@@ -127,17 +127,27 @@ var BS = [
       publicDate: '2021年7月20日', 
       dropdownName: '府谷县中医医院', 
       download: '府谷县中医医院.pdf',
-      showDeadline: '2021-12-31',
+      showDeadline: '2021-12-31'
     },
     {
       bsId: 14,
       isBsShow: true,
-      isSpecialShow: false,
+      isSpecialShow: true,
       bsName: '府谷县顺兴隆汽贸有限公司', 
       publicDate: '2021年7月21日', 
       dropdownName: '府谷县顺兴隆汽贸有限公司', 
       download: '府谷县顺兴隆汽贸有限公司.xlsx',
-      showDeadline: '2021-12-31',
+      showDeadline: '2021-12-31'
+    },
+    {
+      bsId: 15,
+      isBsShow: true,
+      isSpecialShow: true,
+      bsName: '府谷县万联汽贸有限责任公司',
+      publicDate: '2021年7月22日', 
+      dropdownName: '府谷县万联汽贸有限责任公司', 
+      download: '万联汽贸固废公开信息.pdf',
+      showDeadline: '2021-12-31'
     }
 
 ]; 
